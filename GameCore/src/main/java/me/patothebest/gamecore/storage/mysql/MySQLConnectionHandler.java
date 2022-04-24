@@ -30,8 +30,8 @@ public class MySQLConnectionHandler {
 
     public void setupHikari() {
         // has to be one of these, right?...
-        if (dataSourceClassName == null) tryDataSource("org.mariadb.jdbc.MariaDbDataSource");
         if (dataSourceClassName == null) tryDataSource("com.mysql.cj.jdbc.MysqlDataSource");
+        if (dataSourceClassName == null) tryDataSource("org.mariadb.jdbc.MariaDbDataSource");
         if (dataSourceClassName == null) tryDataSource("com.mysql.jdbc.jdbc2.optional.MysqlDataSource");
 
         if (dataSourceClassName == null) {
