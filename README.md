@@ -3,7 +3,7 @@
 A framework used to develop minigames
 
 ## Features
-* Compatible with 1.8-1.16
+* Compatible with 1.8-1.16 - 1.20
 * Uses Guice
 * Walk particles cosmetics
 * Projectile particles cosmetics
@@ -54,7 +54,6 @@ A framework used to develop minigames
 * FeatherBoard
 * HolographicDisplays
 * MultiArenaBungeeMode
-* MVdWPlaceholderAPI
 * PlaceholderAPI (PAPI)
 * SlimeWorldManager
 * Vault
