@@ -25,16 +25,10 @@
             <id>vault-repo</id>
             <url>https://ci.ender.zone/plugin/repository/everything/</url>
         </repository>
-        <!-- MaximVDW repo -->
-        <repository>
-            <id>mvdw-software</id>
-            <name>MVdW Public Repositories</name>
-            <url>https://repo.mvdw-software.com/content/groups/public/</url>
-        </repository>
         <!-- WorldEdit repo -->
         <repository>
             <id>sk89q-repo</id>
-            <url>https://maven.sk89q.com/artifactory/repo/</url>
+            <url>https://maven.enginehub.org/repo/</url>
         </repository>
         <!-- Clip's repo -->
         <repository>
@@ -63,8 +57,9 @@
         </repository>
         <!-- Citizens2 repo -->
         <repository>
-            <id>citizens-2</id>
-            <url>https://repo.citizensnpcs.co/</url>
+            <id>citizens-repo</id>
+            <name>Citizens Repository</name>
+            <url>https://maven.citizensnpcs.co/repo</url>
         </repository>
     </repositories>
 
@@ -74,7 +69,7 @@
             <groupId>com.google.inject.extensions</groupId>
             <artifactId>guice-grapher</artifactId>
             <!-- Unfortunately cannot update yet due to spigot's guava dependency version -->
-            <version>4.1.0</version>
+            <version>5.1.0</version>
             <scope>compile</scope>
         </dependency>
         <!-- Spigot -->
@@ -88,19 +83,19 @@
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
-            <version>4.0.3</version>
+            <version>5.0.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.30</version>
+            <version>2.0.7</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.30</version>
+            <version>2.0.7</version>
             <scope>compile</scope>
         </dependency>
         <!-- fast particles -->
@@ -114,18 +109,11 @@
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-            <version>3.28.0-GA</version>
+            <version>3.29.2-GA</version>
             <scope>provided</scope>
         </dependency>
 
         <!-- PluginHooks -->
-        <!-- MVdWPlaceholderAPI -->
-        <dependency>
-            <groupId>be.maximvdw</groupId>
-            <artifactId>MVdWPlaceholderAPI</artifactId>
-            <version>1.0.2-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
         <!-- PlaceHolderAPI -->
         <dependency>
             <groupId>me.clip</groupId>
@@ -137,7 +125,7 @@
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>
             <artifactId>worldedit-bukkit-7</artifactId>
-            <version>7.1.0-SNAPSHOT</version>
+            <version>7.1.0-SNAPSHOtr</version>
             <scope>system</scope>
             <systemPath>${basedir}/../.lib/FastAsyncWorldEdit-1.15-135.jar</systemPath>
         </dependency>
@@ -194,8 +182,8 @@
         <!-- Citizens2 -->
         <dependency>
             <groupId>net.citizensnpcs</groupId>
-            <artifactId>citizens</artifactId>
-            <version>2.0.27-SNAPSHOT</version>
+            <artifactId>citizens-main</artifactId>
+            <version>2.0.33-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
@@ -211,7 +199,7 @@
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-module-junit4</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.9</version>
             <type>jar</type>
             <scope>test</scope>
         </dependency>
@@ -219,7 +207,7 @@
         <dependency>
             <groupId>org.powermock</groupId>
             <artifactId>powermock-api-mockito2</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.9</version>
             <type>jar</type>
             <scope>test</scope>
         </dependency>
@@ -277,7 +265,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.1.1</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -294,10 +282,11 @@
                             <includePluginDependencies>true</includePluginDependencies>
                         </configuration>
                         <dependencies>
+                            <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
                             <dependency>
                                 <groupId>org.javassist</groupId>
                                 <artifactId>javassist</artifactId>
-                                <version>3.26.0-GA</version>
+                                <version>3.28.0-GA</version>
                             </dependency>
                         </dependencies>
                     </plugin>
@@ -311,7 +300,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.1.1</version>
                         <executions>
                             <execution>
                                 <goals>

@@ -4,7 +4,6 @@ import com.google.inject.Singleton;
 import me.patothebest.gamecore.CorePlugin;
 import me.patothebest.gamecore.PluginConfig;
 import me.patothebest.gamecore.pluginhooks.PluginHookManager;
-import me.patothebest.gamecore.pluginhooks.hooks.MVdWPlaceholderAPIHook;
 import me.patothebest.gamecore.pluginhooks.hooks.PlaceholderAPIHook;
 import me.patothebest.gamecore.arena.AbstractArena;
 import me.patothebest.gamecore.modules.Module;
@@ -31,15 +30,6 @@ public class PlaceHolderManager implements Module {
         PlaceHolderManager.pluginHookManager = pluginHookManager;
     }
 
-    public void registerMDWPlaceholder() {
-        plugin.log(ChatColor.YELLOW + "Registering maximvdw placeholders...");
-
-        placeHolders.forEach(placeHolder -> {
-            pluginHookManager.getHook(MVdWPlaceholderAPIHook.class).registerPlaceholder(placeHolder);
-            plugin.log("Registered placeholder " + "{" + PluginConfig.PLACEHOLDER_PREFIX + "_" + placeHolder.getPlaceholderName() + "}");
-        });
-    }
-
     public void registerClipsPlaceholders() {
         plugin.log(ChatColor.YELLOW + "Registering clip placeholders...");
         pluginHookManager.getHook(PlaceholderAPIHook.class).register(plugin, new EzPlaceholderWrapper(placeHolders));
@@ -47,10 +37,6 @@ public class PlaceHolderManager implements Module {
     }
 
     public static String replace(Player player, String string) {
-        if (pluginHookManager.isHookLoaded(MVdWPlaceholderAPIHook.class)) {
-            string = pluginHookManager.getHook(MVdWPlaceholderAPIHook.class).replace(player, string);
-        }
-
         if (pluginHookManager.isHookLoaded(PlaceholderAPIHook.class)) {
             string = pluginHookManager.getHook(PlaceholderAPIHook.class).replaceString(player, string);
         }

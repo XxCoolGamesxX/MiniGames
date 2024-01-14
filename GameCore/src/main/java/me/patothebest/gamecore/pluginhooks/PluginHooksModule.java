@@ -5,7 +5,6 @@ import com.google.inject.multibindings.MapBinder;
 import me.patothebest.gamecore.CorePlugin;
 import me.patothebest.gamecore.pluginhooks.hooks.FastAsyncWorldEditHook;
 import me.patothebest.gamecore.pluginhooks.hooks.FeatherBoardHook;
-import me.patothebest.gamecore.pluginhooks.hooks.MVdWPlaceholderAPIHook;
 import me.patothebest.gamecore.pluginhooks.hooks.PlaceholderAPIHook;
 import me.patothebest.gamecore.pluginhooks.hooks.SlimeWorldManagerHook;
 import me.patothebest.gamecore.pluginhooks.hooks.VaultHook;
@@ -27,7 +26,6 @@ public class PluginHooksModule extends AbstractBukkitModule<CorePlugin> {
     protected void configure() {
         MapBinder<String, PluginHookProvider> pluginHooks = MapBinder.newMapBinder(binder(), String.class, PluginHookProvider.class);
 
-        registerHook("MVdWPlaceholderAPI", MVdWPlaceholderAPIHook.class, pluginHooks);
         registerHook("PlaceholderAPI", PlaceholderAPIHook.class, pluginHooks);
         registerHook("WorldEdit", WorldEditHook.class, pluginHooks);
         registerHook("FastAsyncWorldEdit", FastAsyncWorldEditHook.class, pluginHooks);

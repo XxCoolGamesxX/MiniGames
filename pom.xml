@@ -22,7 +22,7 @@
         <hungergames.version>1.0-SNAPSHOT</hungergames.version>
 
         <!-- Dependencies -->
-        <gamecore.softdependencies>MVdWPlaceholderAPI, Vault, WorldEdit, PlaceholderAPI, LuckPerms, LeaderHeads, Citizens, HolographicDisplays</gamecore.softdependencies>
+        <gamecore.softdependencies>Vault, WorldEdit, PlaceholderAPI, LuckPerms, LeaderHeads, Citizens, HolographicDisplays</gamecore.softdependencies>
         <!-- Spigot api version -->
         <gamecore.apiversion>1.15</gamecore.apiversion>
     </properties>
@@ -64,7 +64,7 @@
                     <optimize>true</optimize>
                 </configuration>
                 <dependencies>
-                    <!-- we need our custom version as it fixes some bugs on case sensitive file systems -->
+                    <!-- we need our custom version as it fixes some bugs on case-sensitive file systems -->
                     <dependency>
                         <groupId>org.codehaus.plexus</groupId>
                         <artifactId>plexus-compiler-eclipse</artifactId>
