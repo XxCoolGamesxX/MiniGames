@@ -125,7 +125,7 @@
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>
             <artifactId>worldedit-bukkit-7</artifactId>
-            <version>7.1.0-SNAPSHOtr</version>
+            <version>7.1.0-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${basedir}/../.lib/FastAsyncWorldEdit-1.15-135.jar</systemPath>
         </dependency>
